@@ -3,9 +3,16 @@ const app = express()
 
 const PORT = 8000
 
+
+//Mongo database connection
+import mongoClient from './src/config/db.js'
+mongoClient()
+
 // middleware
 app.use(express.urlencoded())
 app.use(express.json())
+
+
 
 // import routere
 import routers from './src/routers/index.js'
