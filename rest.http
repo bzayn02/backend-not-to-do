@@ -8,8 +8,8 @@ POST http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "task": "Gaming",
-    "hr": 15
+   "task": "coding js",
+    "hr": 50
 }
 
 ### update tickets

@@ -3,8 +3,8 @@ const app = express()
 
 const PORT = 8000
 
+// Mongo Database connection
 
-//Mongo database connection
 import mongoClient from './src/config/db.js'
 mongoClient()
 
@@ -12,13 +12,11 @@ mongoClient()
 app.use(express.urlencoded())
 app.use(express.json())
 
-
-
-// import routere
+// import routers
 import routers from './src/routers/index.js'
 // pass all the api request here
 
-app.use('/api/v1/', routers)
+app.use('/api/v1', routers)
 
 app.use('/', function (req, res) {
   res.send('You reached to our Nto to do Backend Server')
