@@ -8,14 +8,25 @@ POST http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-   "task": "coding js",
+   "task": "Singing",
     "hr": 50
 }
 
 ### update tickets
 PATCH http://localhost:8000/api/v1/
+Content-Type: application/json
 
-{}
+
+
+{
+    "id":"61296ff577f45f3add132b98",
+    "todo":false
+}
 
 ### delet tickets
 DELETE http://localhost:8000/api/v1/
+Content-Type: application/json
+
+{
+    "id":"61296676fb71a4656d7a579e"
+}

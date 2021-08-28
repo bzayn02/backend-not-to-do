@@ -4,16 +4,22 @@ const TicketListSchema = mongoose.Schema(
   {
     task: {
       type: String,
-      require: [true, 'Why no bacon?'],
+      required: [true, 'Task is required'],
+      default:'',
     },
     hr: {
       type: Number,
-      require: true,
+      required: true,
       default: 0,
     },
+    todo:{
+      type:Boolean,
+      required:true,
+      default:true
+    }
   },
   {
-    timestamp: true,
+    timestamps: true,
   }
 )
 

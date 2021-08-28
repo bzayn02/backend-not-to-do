@@ -19,7 +19,6 @@ export const getTasks = () => {
   return new Promise((resolve, reject) => {
     TicketListSchema.find()
       .then((data) => {
-        // console.log(data)
         resolve(data)
       })
       .catch((error) => {
@@ -28,8 +27,47 @@ export const getTasks = () => {
   })
 }
 
-//delete
+//get single ticket
 
-//mark as to do
+export const getATask=(_id)=>{
+  return new Promise((resolve, reject)=>{
+    TicketListSchema.findById(_id)
+      .then((data) => resolve(data))
+      .catch((error) =>reject(error))
+  })
+}
+
+//delete single doc
+export const deleteTasks = (_id) =>{
+  return new Promise ((resolve, reject)=>{
+    TicketListSchema.deleteMany({
+      _id:{
+        $in:ids
+      },})
+    .then((data)=>resolve(data))
+    .catch((error)=>reject(error))
+  })
+}
+
+
+
+
+//Switch task between to do and not to do
+
+export const updateTodo = ({id,todo})=>{
+  return new Promise ((resolve, reject)=>{
+    TicketListSchema.findByIdAndUpdate(
+      id,
+      {
+        todo
+      }
+    )
+    .then((result)=>resolve(result))
+    .catch((error)=>reject(error))
+  })
+}
+
+
+
 
 //mar as not to do

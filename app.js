@@ -1,5 +1,7 @@
 import express from 'express'
 const app = express()
+import morgan from 'morgan'
+import helmet from 'helmet'
 
 const PORT = 8000
 
@@ -11,6 +13,8 @@ mongoClient()
 // middleware
 app.use(express.urlencoded())
 app.use(express.json())
+app.use(morgan('combined'))
+app.use(helmet())
 
 // import routers
 import routers from './src/routers/index.js'
@@ -19,7 +23,7 @@ import routers from './src/routers/index.js'
 app.use('/api/v1', routers)
 
 app.use('/', function (req, res) {
-  res.send('You reached to our Nto to do Backend Server')
+  res.send('You reached to our Not to do Backend Server')
 })
 
 app.listen(PORT, (error) => {
