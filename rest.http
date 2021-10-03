@@ -8,7 +8,7 @@ POST http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-   "task": "Singing",
+   "task": "Wsfdf tfdffv",
     "hr": 50
 }
 
@@ -19,14 +19,14 @@ Content-Type: application/json
 
 
 {
-    "id":"61296ff577f45f3add132b98",
+    "id":"615991556554e8047946bf8b",
     "todo":false
 }
 
-### delet tickets
+### delete tickets
 DELETE http://localhost:8000/api/v1/
 Content-Type: application/json
 
 {
-    "id":"61296676fb71a4656d7a579e"
+    "ids":"61599965c62806763f7daba6"
 }
